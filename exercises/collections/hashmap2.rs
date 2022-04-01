@@ -12,8 +12,6 @@
 // Execute the command `rustlings hint hashmap2` if you need
 // hints.
 
-// I AM NOT DONE
-
 use std::collections::HashMap;
 
 #[derive(Hash, PartialEq, Eq)]
@@ -35,9 +33,18 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
     ];
 
     for fruit in fruit_kinds {
-        // TODO: Put new fruits if not already present. Note that you
-        // are not allowed to put any type of fruit that's already
-        // present!
+        /*
+            This can be done a few ways:
+                The first way is to use the `contains_key` method, continue if it exists, or insert it if not
+                The second way is to use the `entry` method with the `or_insert` method to insert the value if it doesn't exist
+        */
+      
+        // if basket.contains_key(&fruit) {
+        //     continue;
+        // }
+        // basket.insert(fruit, 1);
+
+        basket.entry(fruit).or_insert(1);
     }
 }
 
