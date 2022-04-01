@@ -2,8 +2,6 @@
 // Make me compile without changing line 13!
 // Execute `rustlings hint move_semantics2` for hints :)
 
-// I AM NOT DONE
-
 fn main() {
     let vec0 = Vec::new();
 
@@ -18,7 +16,7 @@ fn main() {
 }
 
 fn fill_vec(vec: &Vec<i32>) -> Vec<i32> {
-    let &mut vect = vec;
+    let mut vect = vec.clone();
 
     vect.push(22);
     vect.push(44);
